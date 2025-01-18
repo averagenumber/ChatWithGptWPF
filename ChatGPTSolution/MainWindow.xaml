@@ -1,0 +1,34 @@
+﻿<Window x:Class="ChatGPTSolution.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatGPTSolution"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1000"
+        Closing="On_Exit"
+        Background="#6da87c">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="ListBoxContainer" Grid.Column="0" Background="Transparent" BorderBrush="Transparent"/>
+        <StackPanel Grid.Column="1">
+        <Label Foreground="WhiteSmoke" Content="ChatGPT Solution"  FontFamily="Khmer" FontSize="25" HorizontalAlignment="Center"/>
+        
+        <TextBox Background="#39523f" Foreground="WhiteSmoke" BorderBrush="Transparent"  x:Name="Chat" IsReadOnly="True" Height="200" Width="650" Margin="0 10 0 10 "/>
+          
+        <TextBox Background="#39523f" Foreground="WhiteSmoke" BorderBrush="Transparent" x:Name="RequestBox" Height="40" Width="650" Margin="0 10 0 10 "/>
+        
+        <Border CornerRadius="15" Background="#198233" Width="150"   Margin="0 10 0 10 ">
+        <Button Cursor="Hand" Foreground="White" Background="Transparent" BorderBrush="Transparent" x:Name = "Send_Request" Content="Відправити запит" Height="50" Width="150" Click="SendRequest_Click"/>
+        </Border>
+        
+        <Border CornerRadius="15" Background="#198233" Width="150"   Margin="0 10 0 10 ">
+        <Button Cursor="Hand" Foreground="White" Background="Transparent" BorderBrush="Transparent" x:Name = "Load_Last" Content="Загрузити останній чат" Height="50" Width="150" Click="LoadLast_Click"/>
+        </Border>
+        </StackPanel>
+    </Grid>
+</Window>
